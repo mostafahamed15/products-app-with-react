@@ -3,12 +3,16 @@ import './ProductTableHeader.css';
 
 class ProductTableHeader extends Component {
     render() {
-    
+        let currentSort = this.props.currentSort.column === this.props.column ? this.props.currentSort.direction : false;
         return(
             <div className="container">
                 {this.props.column}
-                <button className="ProductTableHeader-current">&#x25B2;</button>
-                <button>&#x25BC;</button>
+                <button 
+                className={currentSort === "asc" ? "ProductTableHeader-current" : ''}
+                >&#x25B2;</button>
+                <button
+                className={currentSort === "desc" ? "ProductTableHeader-current" : ''}
+                >&#x25BC;</button>
             </div>
         )
     }

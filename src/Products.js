@@ -14,11 +14,25 @@ var PRODUCTS = {
   
 
 class Products extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      filterText: '',
+      inStockOnly: false,
+      products: PRODUCTS
+    }
+  }
   render() {
       return(
           <div>
-              <Search></Search>
-              <ProductTable products={PRODUCTS}></ProductTable>
+              <Search
+                filterText={this.state.filterText}
+                inStockOnly={this.state.inStockOnly}
+              ></Search>
+              <ProductTable 
+                products={this.state.products}
+                filterText={this.state.filterText}
+                inStockOnly={this.state.inStockOnly}></ProductTable>
               <AddProduct></AddProduct>
           </div>
       )
