@@ -16,11 +16,17 @@ var PRODUCTS = {
 class Products extends Component {
   constructor(props) {
     super(props);
+    this.handleSearch = this.handleSearch.bind(this);
     this.state = {
       filterText: '',
       inStockOnly: false,
       products: PRODUCTS
     }
+  }
+  //Search func
+  handleSearch(searchInput) {
+    this.setState(searchInput)
+    
   }
   render() {
       return(
@@ -28,6 +34,7 @@ class Products extends Component {
               <Search
                 filterText={this.state.filterText}
                 inStockOnly={this.state.inStockOnly}
+                onSearch={this.handleSearch}
               ></Search>
               <ProductTable 
                 products={this.state.products}
