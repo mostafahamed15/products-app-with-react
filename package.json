@@ -36,6 +36,8 @@
     "websocket-extensions": "^0.1.4",
     "acorn": ">=5.7.4",
     "minimist": "^0.2.1",
-    "kind-of": "^6.0.3"
+    "kind-of": "^6.0.3",
+    "serialize-javascript": "3.1.0",
+    "dot-prop": "5.1.1"
   }
 }
